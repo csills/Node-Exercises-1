@@ -8,5 +8,14 @@ const rl = readline.createInterface({
 
 rl.question('What is the Domain Name:', (domain) => {
     rl.close();
+    console.log('Domain Name: ' + domain);
+
+    dns.lookup(domain, (err, address) => {
+        if (err) {
+            console.log('error: ' + err);
+            return; //return will stop the execution of the file due to the error. 
+        }
+        console.log('IP Address: ' + address);
+      });
 
 });

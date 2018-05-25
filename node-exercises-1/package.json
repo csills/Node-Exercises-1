@@ -1,9 +1,10 @@
 {
-  "name": "Node Exercises 1",
+  "name": "node-exercises-1",
   "version": "1.0.0",
   "description": "this package contains 4 Node Exercises",
   "main": "index.js",
   "dependencies": {
+    "dns": "^0.2.2",
     "readline": "^1.3.0"
   },
   "devDependencies": {},
