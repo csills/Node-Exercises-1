@@ -11,6 +11,17 @@ const rl = readline.createInterface({
     output: process.stdout,
 });
 
-rl.question('file:', (filename) => {
-    console.log(filename);
-})
+rl.question('What is the filename:', (filename) => {
+    rl.close();
+
+    fs.readFile(filename, 'utf8', (err, data) => { 
+    // (err,data) = standard way of passing data around from function to function.
+    // this way if there is an error, you can handle it right away.
+    // filename is passed into the variable "data"
+        if (err) {
+            console.log('error: ' + err);
+            return; //return will stop the execution of the file due to the error. 
+        }
+        console.log(data.toUpperCase());
+    })
+});
